@@ -1,0 +1,28 @@
+{
+  "env": "TASMANIA",
+  "apienv": "TASMANIAApi",
+
+
+  "LocalHost": "https://localhost:5001/historian",
+  "LocalhostApi": "https://localhost:5001",
+
+  "ADAKApi": "https://vvq-adak.parcqa.com:5001",
+  "ADAK": "https://vvq-adak.parcqa.com:5001/historian",
+
+  "TASMANIAApi": "https://vvq-tasmania.parcqa.com:5001",
+  "TASMANIA": "https://vvq-tasmania.parcqa.com:5001/historian/sub",
+
+  "VANHISTApi": "https://vvq-vanhist2.parcqa.com:5001",
+  "VANHIST": "https://vvq-vanhist2.parcqa.com:5001/historian",
+
+  "VoithDevApi": "https://wvq-stress3.parcqa.com:5001",
+  "VoithDev": "https://manage-VHqnEB.vvq-vanhist2.parcqa.com/",
+
+
+  "PipelineApi": "",
+  "Pipeline": "",
+
+  "headless": true
+
+  //"Localization": "ja"
+}
