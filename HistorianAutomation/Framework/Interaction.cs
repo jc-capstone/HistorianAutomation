@@ -26,7 +26,6 @@ namespace HistorianUIAutomation.Framework
         public ILocator GridPager(int tableIndex = 1) => _basePage.Locator($"(//span[contains(@class,'k-pager-info')])[{tableIndex}]");
         public ILocator AccessTable(int row, int column, int tableIndex = 1) => _basePage.Locator($"(((//table[contains(@class,'k-grid-table')])[{tableIndex}]//tbody//tr)[{row}]//td)[{column}]");
         public ILocator AccessTableInput(int row, int column, int tableIndex = 1) => _basePage.Locator($"((((//table[contains(@class,'k-grid-table')])[{tableIndex}]//tbody//tr)[{row}]//td)[{column}])//input");
-        //public ILocator AccessTable(string rowName, int column, int tableIndex = 1) => _basePage.Locator($"((//table[contains(@class,'k-grid-table')])[{tableIndex}]//tbody//tr/td[text() ='{rowName}'])/..//td[{column}]");
         public ILocator AccessTable(string rowName, int column, int tableIndex = 1) => _basePage.Locator($"((//table[contains(@class,'k-grid-table')])[{tableIndex}]//tbody//tr//*[text() ='{rowName}' or @value='{rowName}'])/ancestor::tr//td[{column}]");
         public ILocator AccessTableWithSpan(string rowName, int column, int tableIndex = 1) => _basePage.Locator($"(((//table[contains(@class,'k-grid-table')])[{tableIndex}]//tbody//tr//*[text() ='{rowName}' or @value = '{rowName}' or @value = ''])/../..//td[{column}])[1]");
         public ILocator AccessTableForDropDown(int row, int column, int tableIndex = 1) => _basePage.Locator($"((((//table[contains(@class,'k-grid-table')])[{tableIndex}]//tbody//tr)[{row}]//td)[{column}]).//span[1]");
@@ -61,7 +60,6 @@ namespace HistorianUIAutomation.Framework
             //some tables keep the value within a span
             var rowByNameAltXpath = $"(((//table[contains(@class,'k-grid-table')])[{tableIndex}])//tr//span[contains(text(), '{name}')]/..)[1]";
 
-
             var deleteButtonByNameXpath = $"((//table[contains(@class,'k-grid-table')])[{tableIndex}])//tr//td/following-sibling::td[last()-{(1 + offsetFromLast).ToString()}]//button";
             if (await _basePage.Locator(rowByNameXpath).IsVisibleAsync())
             {
@@ -71,8 +69,10 @@ namespace HistorianUIAutomation.Framework
             {
                 await _basePage.Locator(rowByNameAltXpath).ClickAsync();
             }
-            var test = "//*[contains(@class,'k-i-delete')]/ancestor::button";
-            await _basePage.Locator(test).ClickAsync();
+            var deleteButton = "//*[contains(@class,'k-i-delete')]/ancestor::button";
+            var lastGridFilter = "(//input[contains(@aria-label, 'Filter')])[last()]";
+            await _basePage.Locator(lastGridFilter).ClickAsync();
+            await _basePage.Locator(deleteButton).ClickAsync();
 
             await Task.Delay(500);
 

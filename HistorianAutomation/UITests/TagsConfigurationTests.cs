@@ -44,7 +44,7 @@ namespace HistorianUIAutomation.Tests
             });
 
             Assert.IsTrue(gridCountAfterSave > originalGridCount);
-            await Pages.TagsConfiguration.TableFilterInput(Pages.TagsConfiguration.Name).FillAsync(testName);
+            await Pages.TagsConfiguration.TableFilterInput(Pages.TagsConfiguration.Name -1).FillAsync(testName);
             await BasePage.Keyboard.PressAsync("Tab");
 
             await Interaction.DeleteRowByName(testName);

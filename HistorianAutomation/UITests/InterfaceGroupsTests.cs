@@ -78,10 +78,6 @@ namespace HistorianUIAutomation.Tests
 
             Assert.IsTrue(!string.IsNullOrEmpty(text));
             await Interaction.DeleteRowByName(testName);
-            if (await Pages.Interfaces.DeleteRecordYesButton.IsVisibleAsync())
-            {
-                await Pages.Interfaces.DeleteRecordYesButton.ClickAsync();
-            }
         }
 
         [Test]

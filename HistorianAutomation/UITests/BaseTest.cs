@@ -9,9 +9,8 @@ using Microsoft.Playwright.NUnit;
 namespace HistorianUIAutomation.Tests
 {
     [Parallelizable(ParallelScope.Self)]
-    public class BaseTest //: ContextTest
+    public class BaseTest
     {
-        // public WaitHelper WaitHelper { get; set; }
         public TestUtilities TestUtilities { get; set; }
         public Dictionary<String, String> Configuration { get; set; }
         public HistorianUIAutomation.Pages.Pages Pages { get; set; }
@@ -38,7 +37,7 @@ namespace HistorianUIAutomation.Tests
             };
             var playwright = await Playwright.CreateAsync();
             playwright.Selectors.SetTestIdAttribute("id");
-            var browser = await playwright.Chromium.LaunchAsync(new() { Headless = false, SlowMo = 250, DownloadsPath = (System.Environment.GetEnvironmentVariable("USERPROFILE") + "\\Downloads") });
+            var browser = await playwright.Chromium.LaunchAsync(new() { Headless = true, SlowMo = 250, DownloadsPath = (System.Environment.GetEnvironmentVariable("USERPROFILE") + "\\Downloads") });
             var context = await browser.NewContextAsync(contextOptions);
             BasePage = await context.NewPageAsync();
             Pages = new Pages.Pages(BasePage);
