@@ -24,6 +24,7 @@ namespace HistorianUIAutomation.Pages
         public ILocator ImportFromExcelButton => basePage.GetByText("Import from Excel");
         public ILocator SelectFileButton => basePage.GetByText("Select File");
         public ILocator UploadExcelInput => basePage.Locator("//input[@type='file']");
+        public ILocator PreviewImportButton => basePage.GetByText("Preview Import");
         public ILocator SubmitImportButton => basePage.GetByText("Save Import");
         public ILocator SaveChangesPopupOkButton => basePage.Locator("//span[@class='k-button-text' and text() = 'OK']/..");
         public ILocator DeleteRecordYesButton => basePage.GetByText("Yes");

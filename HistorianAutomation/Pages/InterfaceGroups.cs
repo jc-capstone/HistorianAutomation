@@ -26,7 +26,6 @@ namespace HistorianUIAutomation.Pages
 
         #region Columns
         public int Name => 2;
-        public int HistoryPath => 3;
         public int HistorianPath => 4;
         public int ArchivePath => 5;
         public int TimeZone => 6;

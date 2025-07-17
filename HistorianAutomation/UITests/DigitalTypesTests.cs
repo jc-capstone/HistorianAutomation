@@ -162,6 +162,8 @@ namespace HistorianUIAutomation.Tests
                 await Pages.DigitalTypes.SaveChangesPopupOkButton.ClickAsync();
             }
             Assert.IsTrue(gridCountAfterSave > originalGridCount);
+
+            //Add delete
         }
 
         [Test]

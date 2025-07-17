@@ -20,9 +20,9 @@ namespace HistorianUIAutomation.Tests
             await Pages.InterfaceGroups.AddNewButton.ClickAsync();
             await Interaction.SetTextForTd(Interaction.AccessTable(1, Pages.InterfaceGroups.Name), testName);
 
-            var historyPathCell = Interaction.AccessTable(1, Pages.InterfaceGroups.HistoryPath);
+            var historyPathCell = Interaction.AccessTable(1, Pages.InterfaceGroups.HistorianPath);
             await historyPathCell.DblClickAsync();
-            await BasePage.Keyboard.PressAsync("ArrowUp");
+            await BasePage.Keyboard.PressAsync("ArrowDown");
             await BasePage.Keyboard.PressAsync("Tab");
 
             await Pages.InterfaceGroups.SaveChangesButton.ClickAsync();
@@ -55,7 +55,7 @@ namespace HistorianUIAutomation.Tests
             await Pages.InterfaceGroups.AddNewButton.ClickAsync();
             await Interaction.SetTextForTd(Interaction.AccessTable(1, Pages.InterfaceGroups.Name), testName);
 
-            var historyPathCell = Interaction.AccessTable(1, Pages.InterfaceGroups.HistoryPath);
+            var historyPathCell = Interaction.AccessTable(1, Pages.InterfaceGroups.HistorianPath);
             await historyPathCell.DblClickAsync();
             await BasePage.Keyboard.PressAsync("ArrowUp");
             await BasePage.Keyboard.PressAsync("Tab");
@@ -92,7 +92,7 @@ namespace HistorianUIAutomation.Tests
             await Pages.InterfaceGroups.AddNewButton.ClickAsync();
             await Interaction.SetTextForTd(Interaction.AccessTable(1, Pages.InterfaceGroups.Name), testName);
 
-            var historyPathCell = Interaction.AccessTable(1, Pages.InterfaceGroups.HistoryPath);
+            var historyPathCell = Interaction.AccessTable(1, Pages.InterfaceGroups.HistorianPath);
             await historyPathCell.DblClickAsync();
             await BasePage.Keyboard.PressAsync("ArrowUp");
             await BasePage.Keyboard.PressAsync("Tab");

@@ -37,7 +37,7 @@ namespace HistorianUIAutomation.Tests
             };
             var playwright = await Playwright.CreateAsync();
             playwright.Selectors.SetTestIdAttribute("id");
-            var browser = await playwright.Chromium.LaunchAsync(new() { Headless = true, SlowMo = 250, DownloadsPath = (System.Environment.GetEnvironmentVariable("USERPROFILE") + "\\Downloads") });
+            var browser = await playwright.Chromium.LaunchAsync(new() { Headless = false, SlowMo = 100, DownloadsPath = (System.Environment.GetEnvironmentVariable("USERPROFILE") + "\\Downloads") });
             var context = await browser.NewContextAsync(contextOptions);
             BasePage = await context.NewPageAsync();
             Pages = new Pages.Pages(BasePage);

@@ -10,7 +10,7 @@
   "ADAK": "https://vvq-adak.parcqa.com:5001/historian",
 
   "TASMANIAApi": "https://vvq-tasmania.parcqa.com:5001",
-  "TASMANIA": "https://vvq-tasmania.parcqa.com:5001/historian/sub",
+  "TASMANIA": "https://vvq-tasmania.parcqa.com:5001/historian",
 
   "VANHISTApi": "https://vvq-vanhist2.parcqa.com:5001",
   "VANHIST": "https://vvq-vanhist2.parcqa.com:5001/historian",

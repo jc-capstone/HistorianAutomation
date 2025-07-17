@@ -13,7 +13,7 @@ namespace HistorianUIAutomation.Tests
         {
             await TestUtilities.NavigateToHistorian();
             await Pages.HomePage.ConfigurationTabByName("Logs").ClickAsync();
-
+            await Pages.Logs.LogTable.WaitForAsync();
             Assert.IsTrue(await Pages.Logs.LogTable.IsVisibleAsync());
         }
 

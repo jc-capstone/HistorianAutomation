@@ -82,9 +82,8 @@ namespace HistorianUIAutomation.Tests
             }
 
             await Interaction.AccessTable(testName, Pages.Interfaces.HistoryPath).DblClickAsync();
-            await BasePage.Keyboard.PressAsync("ArrowDown");
-            await BasePage.Keyboard.PressAsync("ArrowDown");
-            await BasePage.Keyboard.PressAsync("Enter");
+            await BasePage.Keyboard.TypeAsync(testName);
+            await BasePage.Keyboard.PressAsync("Tab");
             await Pages.Interfaces.SaveChangesButton.ClickAsync();
 
             if (await Pages.Interfaces.SaveChangesPopupOkButton.IsVisibleAsync())
@@ -236,6 +235,10 @@ namespace HistorianUIAutomation.Tests
             // Wait for the import grid to appear
             await Pages.ImportExcelGrid.GridRows.WaitForAsync(new() { State = WaitForSelectorState.Visible });
 
+            if (await Pages.Interfaces.PreviewImportButton.IsVisibleAsync())
+            {
+                await Pages.Interfaces.PreviewImportButton.ClickAsync();
+            }
             await Pages.Interfaces.SubmitImportButton.ClickAsync();
 
             // Wait for the grid to update
